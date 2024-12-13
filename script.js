@@ -8,7 +8,7 @@ function createGrid(n) {
 }
 
 
-let color = "black";
+let color = "#292929";
 const container = document.querySelector("#container");
 container.addEventListener("mouseover", (e) => {
 	if (e.target.className == "gridElement") {

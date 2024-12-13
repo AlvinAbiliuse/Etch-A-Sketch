@@ -1,10 +1,10 @@
 body {
 	display: flex;
-	justify-content: center;
 	align-items: center;
 	height: 80vh;
 	flex-direction: column;
 	flex-grow: 1;
+	gap: 20px;
 }
 
 #container {
@@ -13,10 +13,100 @@ body {
 	flex-wrap: wrap;
 	width: 480px;
 	height: 480px;
-	border: 2px solid black;
+	border: 2px solid #a6dcff;
 }
 
 .gridElement {
 	padding: 15px;
 }
 
+#newCanvasContainer {
+	display: flex;
+	flex-direction: column;
+	gap: 10px;
+	padding; 20px;
+	margin: 10px;
+	width: 150px;
+}
+
+#increaseGrid {
+	display: flex;
+	justify-content: center;
+}
+
+#plus, #minus {
+	width: 30px;
+	height: 25px;
+	font-size: 20px;
+}
+
+#plus.blue,
+#minus.blue {
+	background: #f2faff;
+	border: 1px solid #a6dcff;
+	color: #2887c4;
+}
+
+#plus.blue:hover,
+#minus.blue:hover {
+	cursor: pointer;
+	background: #b0e0ff;
+}
+
+#plus.blue:active,
+#minus.blue:active {
+	background: #f2faff;
+} 
+
+#plus.red,
+#minus.red {
+	background: #fff2f2;
+	border: 1px solid #ffa6a6;
+	color: #9e2424;
+}
+
+#plus.red:hover,
+#minus.red:hover {
+	cursor:pointer;
+	background: #ffb0b0;
+}
+
+#plus.red:active,
+#minus.red:active {
+	background: #fff2f2;
+}
+
+#plus {
+	border-left: none !important;
+	border-radius: 0px 5px 5px 0px;
+	font-size: 16px;
+}
+
+#minus {
+	border-right: none !important;
+	border-radius: 5px 0px 0px 5px;
+}
+	
+input {
+	width: 40px;
+	text-align: center;
+	border: 1px solid #a6dcff;
+	border-left: none;
+	border-right: none;
+}
+
+#newCanvas {
+	background: #a6dcff;
+	color: #235f87;
+	border: 1px solid #a6dcff;
+	border-radius: 5px;
+	padding: 5px;
+}
+
+#newCanvas:hover {
+	background: #ceecff;
+}
+
+#newCanvas:active {
+	background: #b0e0ff;
+}
