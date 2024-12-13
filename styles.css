@@ -1,0 +1,22 @@
+body {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 80vh;
+	flex-direction: column;
+	flex-grow: 1;
+}
+
+#container {
+	display: flex;
+	flex-direction: ;
+	flex-wrap: wrap;
+	width: 480px;
+	height: 480px;
+	border: 2px solid black;
+}
+
+.gridElement {
+	padding: 15px;
+}
+
