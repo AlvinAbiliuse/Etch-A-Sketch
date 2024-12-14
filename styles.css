@@ -16,6 +16,14 @@ body {
 	border: 2px solid #a6dcff;
 }
 
+#container p {
+	width: 200px;
+	font-size: 25px;
+	text-align: center;
+	margin: auto auto;
+	color: #2887c4;
+}
+
 .gridElement {
 	padding: 15px;
 }

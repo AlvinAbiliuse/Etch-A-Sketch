@@ -1,8 +1,9 @@
 
-function createGrid(n) {
+function createGrid(n, padding) {
 	for (i=0; i < (n * n) ; i++) {
 		let grid = document.createElement("div");
 		grid.className = "gridElement";
+		grid.style.padding = padding;
 		container.appendChild(grid);
 	}
 }
@@ -38,12 +39,18 @@ newCanvas.addEventListener("click", (e) => {
 				gridSize.value--;
 			}
 		} else if (e.target.id == "newCanvas") {
+			if (isNaN(Number(gridSize.value))){
+				gridSize.value = 16;	
+			} else if (gridSize.value > 50) {
+				gridSize.value = 50;
+			} else if (gridSize.value < 1) {
+				gridSize.value = 1;
+			}
 			let gridItem = gridSize.value;
 			console.log(((480 / Number(gridSize.value)) / 2) + "px");
 			container.innerHTML = "";
-			createGrid(gridItem);
-			document.querySelector(".gridElement").style.padding = 
+			let gridPadding = 
 				((480 / Number(gridSize.value)) / 2) + "px";
+			createGrid(gridItem, gridPadding);
 		}
 });
-createGrid(16);
