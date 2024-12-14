@@ -4,7 +4,7 @@ body {
 	height: 80vh;
 	flex-direction: column;
 	flex-grow: 1;
-	gap: 20px;
+	gap: 10px;
 }
 
 #container {
@@ -13,6 +13,7 @@ body {
 	flex-wrap: wrap;
 	width: 480px;
 	height: 480px;
+	flex-shrink: 0;
 	border: 2px solid #a6dcff;
 }
 
@@ -22,7 +23,21 @@ body {
 	text-align: center;
 	margin: auto auto;
 	color: #2887c4;
+	cursor: default;
 }
+
+#optionContainer {
+	display: flex;
+	width: 400px;
+	justify-content: space-between;
+	flex-wrap: wrap;
+}
+
+#optionContainer button {
+	padding: 10px !important;
+	width: 125px;
+}
+
 
 .gridElement {
 	padding: 15px;
@@ -103,18 +118,23 @@ input {
 	border-right: none;
 }
 
-#newCanvas {
+#newCanvas,
+#optionContainer button {
 	background: #a6dcff;
 	color: #235f87;
 	border: 1px solid #a6dcff;
 	border-radius: 5px;
 	padding: 5px;
+	cursor: pointer;
+	font-size: 14px;
 }
 
-#newCanvas:hover {
+#newCanvas:hover,
+#optionContainer button:hover {
 	background: #ceecff;
 }
 
-#newCanvas:active {
+#newCanvas:active,
+#optionContainer button:active {
 	background: #b0e0ff;
 }

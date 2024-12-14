@@ -44,7 +44,7 @@ newCanvas.addEventListener("click", (e) => {
 			} else if (gridSize.value > 50) {
 				gridSize.value = 50;
 			} else if (gridSize.value < 1) {
-				gridSize.value = 1;
+				gridSize.value = 16;
 			}
 			let gridItem = gridSize.value;
 			console.log(((480 / Number(gridSize.value)) / 2) + "px");
