@@ -4,7 +4,7 @@ body {
 	height: 80vh;
 	flex-direction: column;
 	flex-grow: 1;
-	gap: 10px;
+	gap: 5px;
 }
 
 #container {
@@ -28,9 +28,11 @@ body {
 
 #optionContainer {
 	display: flex;
-	width: 400px;
+	width: 600px;
 	justify-content: space-between;
 	flex-wrap: wrap;
+	gap: 10px;
+	margin: 10px;
 }
 
 #optionContainer button {
@@ -131,10 +133,10 @@ input {
 
 #newCanvas:hover,
 #optionContainer button:hover {
-	background: #ceecff;
+	background: #ceecff !important;
 }
 
 #newCanvas:active,
 #optionContainer button:active {
-	background: #b0e0ff;
+	background: #6e94ec !important;;
 }

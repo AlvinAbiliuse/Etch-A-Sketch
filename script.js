@@ -11,11 +11,52 @@ function createGrid(n, padding) {
 
 
 let color = "#292929";
+let selectedChoice = "";
+let imgOpacity = 10;
 let container = document.querySelector("#container");
 container.addEventListener("mouseover", (e) => {
+	if (selectedChoice == "funky") {
+		color = "rgb(" + Math.floor(Math.random() * 255) + ", " + 
+					Math.floor(Math.random() * 255) + ", " + 
+					Math.floor(Math.random() * 255)+ ")";
+	} else if (selectedChoice == "opacity" && e.target.className ==
+											"gridElement") {
+		if (imgOpacity < 100) {
+			color = "rgb(41 41 41 / " + imgOpacity + "%)";
+			imgOpacity+= 10;
+		}
+	}
 	if (e.target.className == "gridElement") {
 		e.target.style.background = color;
 	}
+});
+let changeColor = document.querySelector("#optionContainer");
+let btns = document.querySelectorAll("#optionContainer button");
+optionContainer.addEventListener("click", (e) => {
+	if (e.target.id == "erase") {
+		color = "white";
+		selectedChoice = "";
+		btns.forEach((btn) => btn.style.background = "#a6dcff");
+		e.target.style.setProperty("background", "#6e94ec",
+								 	"important");
+	} else if (e.target.id == "black") {
+		color = "#292929";
+		selectedChoice = "";
+		btns.forEach((btn) => btn.style.background = "#a6dcff");
+		e.target.style.setProperty("background", "#6e94ec",
+								 	"important");
+	} else if (e.target.id == "opacity") {
+		selectedChoice = "opacity";
+		imgOpacity = 10;
+		btns.forEach((btn) => btn.style.background = "#a6dcff");
+		e.target.style.setProperty("background", "#6e94ec",
+								 	"important");
+	} else if (e.target.id == "funkyColors") {
+		selectedChoice = "funky"
+		btns.forEach((btn) => btn.style.background = "#a6dcff");
+		e.target.style.setProperty("background", "#6e94ec",
+								 	"important");
+	} 
 });
 
 let newCanvas = document.querySelector("#newCanvasContainer");
