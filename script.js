@@ -21,7 +21,7 @@ container.addEventListener("mouseover", (e) => {
 					Math.floor(Math.random() * 255)+ ")";
 	} else if (selectedChoice == "opacity" && e.target.className ==
 											"gridElement") {
-		if (imgOpacity < 100) {
+		if (imgOpacity <= 100) {
 			color = "rgb(41 41 41 / " + imgOpacity + "%)";
 			imgOpacity+= 10;
 		}
@@ -62,7 +62,6 @@ optionContainer.addEventListener("click", (e) => {
 let newCanvas = document.querySelector("#newCanvasContainer");
 newCanvas.addEventListener("click", (e) => {
 		let gridSize = document.querySelector("input");
-		console.log(gridSize.value);
 		if (e.target.id == "plus") {
 			if (gridSize.value >= 30) {
 				gridSize.value = 30;
@@ -80,6 +79,7 @@ newCanvas.addEventListener("click", (e) => {
 				gridSize.value--;
 			}
 		} else if (e.target.id == "newCanvas") {
+			imgOpacity = 10;
 			if (isNaN(Number(gridSize.value))){
 				gridSize.value = 16;	
 			} else if (gridSize.value > 50) {
@@ -88,7 +88,6 @@ newCanvas.addEventListener("click", (e) => {
 				gridSize.value = 16;
 			}
 			let gridItem = gridSize.value;
-			console.log(((480 / Number(gridSize.value)) / 2) + "px");
 			container.innerHTML = "";
 			let gridPadding = 
 				((480 / Number(gridSize.value)) / 2) + "px";
